@@ -4,7 +4,7 @@
 </head>
 <body>
     @include('layouts.parciais.nav')
-    @include('layouts.parciais.header')
+   <!-- @include('layouts.parciais.header')-->
     @yield('content')
     @include('layouts.parciais.footer')
 </body>
