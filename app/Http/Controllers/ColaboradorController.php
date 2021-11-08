@@ -10,7 +10,7 @@ class ColaboradorController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * Versão curta: php artisan make:model -mc test --resource
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -19,7 +19,7 @@ class ColaboradorController extends Controller
         $colaboradores = Colaborador::all();
         return view('colaborador.index',compact('colaboradores'));
 
-        
+
     }
 
     /**
@@ -66,7 +66,8 @@ class ColaboradorController extends Controller
      */
     public function edit(Colaborador $colaborador)
     {
-        //
+        // edit em uma linha
+        return view('colaborador.edit', compact('colaborador'));
     }
 
     /**
@@ -79,6 +80,12 @@ class ColaboradorController extends Controller
     public function update(Request $request, Colaborador $colaborador)
     {
         //
+        $colaborador->nome = $request->nome;
+        $colaborador->cargo = $request->cargo;
+        $colaborador->departamento_id = $request->departamento_id;
+        $colaborador->save();
+        Session::flash('flash_message', 'Colavorador atualizado com sucesso!');
+        return redirect()->route('colaborador.index');
     }
 
     /**

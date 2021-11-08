@@ -10,7 +10,8 @@ class DepartamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * https://stackoverflow.com/questions/43187735/laravel-5-4-create-model-controller-and-migration-in-single-artisan-command
+     * Versão curta: php artisan make:model -mc test --resource
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -97,7 +98,7 @@ class DepartamentoController extends Controller
     public function destroy(Departamento $departamento)
     {
         //
-      
-    
+
+
     }
 }
