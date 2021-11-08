@@ -11,13 +11,16 @@ class Departamento extends Model
         'nome', 'descricao'
     ];
     use HasFactory;
-    public function user()
+        /**
+     * 
+     * Neste caso, o metodos precisa estar no plural. Mostra todos os colaboradores do departamento.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    */
+
+    public function colaboradors()
     {
-        return $this->belongsTo(User::class);
-    }
-    public function colaborador()
-    {
-        return $this->belongsTo(Colaborador::class);
+        return $this->hasMany(Colaborador::class);
+        //return $this->belongsTo(Colaborador::class);
 
     }
 }

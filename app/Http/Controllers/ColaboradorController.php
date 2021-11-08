@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Session;
+use Symfony\Component\HttpFoundation\Session\Session as SessionSession;
 use App\Models\Colaborador;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,10 @@ class ColaboradorController extends Controller
     public function index()
     {
         //
+        $colaboradores = Colaborador::all();
+        return view('colaborador.index',compact('colaboradores'));
+
+        
     }
 
     /**
@@ -25,6 +30,7 @@ class ColaboradorController extends Controller
     public function create()
     {
         //
+        return view('colaborador.create');
     }
 
     /**
@@ -35,7 +41,10 @@ class ColaboradorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all('nome'));
+        Colaborador::create($request->all());
+        Session::flash('flash_message', 'Novo colaborado criado com sucesso!'); //messagem de sucesso!
+        return redirect()->route('colaborador.index');
     }
 
     /**

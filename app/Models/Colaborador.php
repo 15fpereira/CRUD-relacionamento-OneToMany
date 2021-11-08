@@ -8,11 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Colaborador extends Model
 {
     protected $fillable = [
-        'nome', 'cargo','departamento_id'
+        //chave estrageira padrão: _id
+        //O Eloquent tentará encontrar um "Departamento" modelo que tenha um idque corresponda à post_idcoluna do Commentmodelo.
+        'nome', 'cargo', 'departamento_id' 
+        
     ];
     use HasFactory;
+    /**
+     * Get the colaborador that owns the Colaborador
+     * Importante que o nome da chave estrageira seja o mesmo nome do metodo seguido de _id.
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    */
     public function departamento()
     {
-        return $this->hasOne(Departamento::class);
+        return $this->belongsTo(Departamento::class);
     }
 }

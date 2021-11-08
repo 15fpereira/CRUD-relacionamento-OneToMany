@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Session;
+use Symfony\Component\HttpFoundation\Session\Session as SessionSession;
 use App\Models\Departamento;
 use Illuminate\Http\Request;
 
@@ -27,6 +28,7 @@ class DepartamentoController extends Controller
     public function create()
     {
         //
+        return view('departamento.create');
     }
 
     /**
@@ -38,6 +40,11 @@ class DepartamentoController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        //dd($data);
+        Departamento::create($data);
+        Session::flash('flash_message', 'Departamento criado com sucesso! '); //messagem de sucesso!
+        return redirect()->route('departamento.index');
     }
 
     /**
@@ -60,6 +67,8 @@ class DepartamentoController extends Controller
     public function edit(Departamento $departamento)
     {
         //
+        //dd($departamento->id);
+        return view('departamento.edit', compact('departamento'));
     }
 
     /**
@@ -72,6 +81,11 @@ class DepartamentoController extends Controller
     public function update(Request $request, Departamento $departamento)
     {
         //
+        $departamento->nome = $request->nome;
+        $departamento->descricao = $request->descricao;
+        $departamento->save();
+        Session::flash('flash_message', 'Departamento atualizado com sucesso!');
+        return redirect()->route('departamento.index');
     }
 
     /**
@@ -83,5 +97,7 @@ class DepartamentoController extends Controller
     public function destroy(Departamento $departamento)
     {
         //
+      
+    
     }
 }
