@@ -15,7 +15,6 @@
     </div>
 
     <div class="row">
-        <p></p>
         <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                     Página, lista:
                 </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Colaboradores.</font></font></small>

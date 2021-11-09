@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container">
-<div class="row">
+<div class="row mt-4">
   @if(Session::has('flash_message'))
   <div class="alert alert-dismissible alert-success">
       <button type="button" class="btn-close" data-dismiss="alert"></button>
@@ -14,7 +14,6 @@
   @endif
 </div>
 <div class="row">
-        <p></p>
         <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                     Página, lista:
                 </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Departamento.</font></font></small>

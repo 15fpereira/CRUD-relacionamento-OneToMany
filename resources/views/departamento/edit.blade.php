@@ -5,8 +5,7 @@
 @section('content')
 <div class="container">
     
-    <div class="row">
-        <p></p>
+    <div class="row mt-4">
         <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                     Página, editar:
                 </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Departamento.</font></font></small>
@@ -38,13 +37,16 @@
 
         </div>
 
-        <div class="row">
-        <button type="button" class="btn btn-link"></button>
+        <div class="row mt-4">
 
         <button type="submit" class="btn btn-lg btn-dark">
             Salvar
         </button>
 
+        </div>
+        <div class="row mt-4">
+
+            <input type="button" class="btn btn-lg btn-dark" value="Voltar" onClick="history.go(-1)">
         </div>
         </form>
         <!-- End Contact Form -->

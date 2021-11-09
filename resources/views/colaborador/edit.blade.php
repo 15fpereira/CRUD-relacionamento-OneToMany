@@ -14,7 +14,6 @@
         @endif
     </div>
     <div class="row">
-        <p></p>
         <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                     Página, Editar:
                 </font></font><small class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Colaborador.</font></font></small>
@@ -68,7 +67,6 @@
 </div>
 
 <div class="row mt-4">
-<button type="button" class="btn btn-link"></button>
 
 <button type="submit" class="btn btn-lg btn-dark">
     Salvar edição
