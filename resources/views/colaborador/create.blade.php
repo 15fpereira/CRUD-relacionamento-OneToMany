@@ -27,7 +27,7 @@
 <form class="contact-form" id="contact-form" role="form" method="POST" action="{{route('colaborador.store')}}">
     {{ csrf_field() }}
     <div class="controls form-group{{ $errors->has('nome') ? ' has-error' : 'nome' }}">
-    
+
 
         <div class="form-group">
             <fieldset>
@@ -41,11 +41,12 @@
             </fieldset>
           </div>
         <div class="form-group">
+            <input type="hidden" id="cargo" name="cargo" value="Antigo cargo não definido">
             <label for="cargo" class="form-label mt-4">Cargo:</label>
-            <textarea class="form-control" id="cargo" name="cargo" value="{{ old('cargo') }}" autofocus placeholder="Descreva o nome do cargo do novo colaborador:" rows="3"></textarea>
-            @if ($errors->has('cargo'))
+            <textarea class="form-control" id="cargo_at" name="cargo_at" value="{{ old('cargo_at') }}" autofocus placeholder="Descreva o nome do cargo do novo colaborador:" rows="3"></textarea>
+            @if ($errors->has('cargo_at'))
                 <span class="help-block">
-                <strong>{{ $errors->first('cargo') }}</strong>
+                <strong>{{ $errors->first('cargo_at') }}</strong>
             </span>
             @endif
         </div>
@@ -55,14 +56,14 @@
             <select class="form-select" name="departamento_id" id="departamento_id">
               <option value="1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Selecione o nome do departamento:</font></font></option>
               @foreach (App\Models\Departamento::all() as $item)
-              <option value="{{$item->id}}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->nome}}</font></font></option>   
+              <option value="{{$item->id}}"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$item->nome}}</font></font></option>
               @endforeach
             </select>
           </div>
 
     </div>
 
-    
+
 </div>
 
 <div class="row mt-4">

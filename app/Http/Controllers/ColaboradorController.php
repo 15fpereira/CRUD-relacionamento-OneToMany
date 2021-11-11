@@ -82,9 +82,10 @@ class ColaboradorController extends Controller
         //
         $colaborador->nome = $request->nome;
         $colaborador->cargo = $request->cargo;
+        $colaborador->cargo_at = $request->cargo_at;
         $colaborador->departamento_id = $request->departamento_id;
         $colaborador->save();
-        Session::flash('flash_message', 'Colavorador atualizado com sucesso!');
+        Session::flash('flash_message', 'Colaborador atualizado com sucesso!');
         return redirect()->route('colaborador.index');
     }
 

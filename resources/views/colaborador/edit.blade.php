@@ -43,10 +43,11 @@
           </div>
         <div class="form-group">
             <label for="cargo" class="form-label mt-4">Cargo:</label>
-            <textarea class="form-control" id="cargo" name="cargo" value="{{ $colaborador->cargo }}" rows="3">{{ $colaborador->cargo }}</textarea>
-            @if ($errors->has('cargo'))
+            <input type="hidden" id="cargo" name="cargo" value="{{ $colaborador->cargo_at }}">
+            <textarea class="form-control" id="cargo_at" name="cargo_at" value="{{ $colaborador->cargo_at }}" rows="3">{{ $colaborador->cargo_at }}</textarea>
+            @if ($errors->has('cargo_at'))
                 <span class="help-block">
-                <strong>{{ $errors->first('cargo') }}</strong>
+                <strong>{{ $errors->first('cargo_at') }}</strong>
             </span>
             @endif
         </div>

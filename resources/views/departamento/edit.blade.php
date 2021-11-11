@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <div class="container">
-    
+
     <div class="row mt-4">
         <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                     Página, editar:
@@ -30,7 +30,7 @@
                 <div class="form-group">
                     <label for="exampleTextarea" class="form-label mt-4">Descrição:</label>
                     <textarea class="form-control" id="descricao" name="descricao" rows="3" value="{{$departamento->descricao}}" >{{$departamento->descricao}}</textarea>
-   
+
                 </div>
 
             </div>

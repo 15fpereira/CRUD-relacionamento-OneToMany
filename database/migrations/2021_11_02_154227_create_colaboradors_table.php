@@ -17,6 +17,7 @@ class CreateColaboradorsTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('cargo');
+            $table->string('cargo_at');
             $table->unsignedBigInteger('departamento_id');
             $table->foreign('departamento_id')->references('id')->on('departamentos')
                 ->onUpdate('cascade')

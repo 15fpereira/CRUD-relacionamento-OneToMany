@@ -44,7 +44,7 @@
                 <tr class="table-active">
                     <th scope="row">Active</th>
                     <td>{{$item->nome}}</td>
-                    <td>{{$item->cargo}}</td>
+                    <td>{{$item->cargo_at}}</td>
                     <td>{{$item->departamento->nome}}</td>
                     <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                         <ul class="nav nav-pills">
